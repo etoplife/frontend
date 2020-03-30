@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "airbnb/base",
+    "prettier"
+  ],
+  "rules": {
+    "func-names": ["error", "never", { "generators": "never" }]
+  },
+  "plugins": [
+    "prettier"
+  ]
+}

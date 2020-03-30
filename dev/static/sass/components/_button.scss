@@ -1,0 +1,92 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .3s linear;
+
+  &_size {
+
+    &_lg {
+      $height: 54px;
+      height: $height;
+      line-height: $height;
+      font-size: 18px;
+      padding: 0 75px;
+      border-radius: 100px;
+    }
+
+    &_md {
+      $height: 40px;
+      height: $height;
+      line-height: $height;
+      font-size: 14px;
+      padding: 0 33px;
+      font-weight: 500;
+      letter-spacing: .25px;
+      border-radius: 100px;
+
+      @include sm {
+        padding: 0 50px;
+      }
+    }
+  }
+
+  &_theme {
+
+    &_primary {
+      color: #fff;
+      --bg-color: #{$primary-color};
+      background: var(--bg-color);
+
+      &:hover {
+        background: rgba($primary-color, .8);
+      }
+    }
+
+    &_light {
+      color: $secondary-color;
+      --bg-color: #fff;
+      background: var(--bg-color);
+
+      &:hover {
+        background: rgba(#fff, .8);
+      }
+    }
+
+    &_file {
+      $offset: 6px;
+      padding-right: 56px;
+      padding-left: 70px;
+      margin-left: $offset;
+
+      &::before {
+        z-index: 1;
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding-left: 19%;
+        height: calc(100% + 5px);
+        background: url("../img/svg-img/file.svg") no-repeat;
+      }
+
+      &::after {
+        z-index: 2;
+        content: attr(data-format);
+        position: absolute;
+        bottom: 19%;
+        left: #{$offset * -1};
+        line-height: 1;
+        padding: 3px 5px;
+        font-size: 12px;
+        border-radius: 5%;
+        background: var(--bg-color);
+        text-transform: uppercase;
+      }
+    }
+  }
+}
