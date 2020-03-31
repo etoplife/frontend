@@ -14,24 +14,24 @@ const isDebug = process.env.NODE_ENV !== 'production';
 const processors = [flexbugs, animation, autoprefixer];
 
 gulp.task('styles', () => (
-    gulp.src(
-        [
-            './dev/static/sass/vars.scss',
-            './dev/static/sass/mixins.scss',
-            './dev/static/sass/fonts.scss',
-            './dev/static/sass/components/*.scss',
-            './dev/static/sass/modules/*.scss',
-            './dev/static/sass/pages/*.scss',
-        ])
-        .pipe(concat('main.scss'))
-        .pipe(sass({
-          includePaths: ['node_modules']
-        }))
-        .pipe(gulpIf(!isDebug, gcmq()))
-        .pipe(gulpIf(!isDebug, postcss(processors)))
-        .pipe(gulpIf(!isDebug, base64({
-          maxWeightResource: 8192
-        })))
-        .pipe(gulpIf(!isDebug, csso()))
-        .pipe(gulp.dest('./build/static/css'))
+  gulp.src(
+    [
+      './dev/static/sass/vars.scss',
+      './dev/static/sass/mixins.scss',
+      './dev/static/sass/fonts.scss',
+      './dev/static/sass/components/*.scss',
+      './dev/static/sass/modules/*.scss',
+      './dev/static/sass/pages/*.scss',
+    ])
+    .pipe(concat('main.scss'))
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }))
+    .pipe(gulpIf(!isDebug, gcmq()))
+    .pipe(gulpIf(!isDebug, postcss(processors)))
+    .pipe(gulpIf(!isDebug, base64({
+      maxWeightResource: 8192
+    })))
+    .pipe(gulpIf(!isDebug, csso()))
+    .pipe(gulp.dest('./build/static/css'))
 ));

@@ -4,5 +4,5 @@ import webpackConfig from '../webpack.config';
 
 gulp.task('scripts', () => (
   webpack(webpackConfig)
-  .pipe(gulp.dest('./build/static/js/'))
+    .pipe(gulp.dest('./build/static/js/'))
 ));
