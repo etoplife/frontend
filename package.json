@@ -8,11 +8,8 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "npm run lint"
         }
-    },
-    "lint-staged": {
-        "*.(js|vue)": ["npm run lint", "git add"]
     },
     "devDependencies": {
         "@babel/core": "^7.5.5",
@@ -33,7 +30,6 @@
         "hard-source-webpack-plugin": "^0.13.1",
         "husky": "^4.2.3",
         "imports-loader": "^0.8.0",
-        "lint-staged": "^10.1.0",
         "prettier": "^1.18.2",
         "stylelint": "^13.2.1",
         "stylelint-config-airbnb": "^0.0.0",
