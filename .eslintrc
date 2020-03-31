@@ -1,15 +1,22 @@
 {
-  "env": {
-    "browser": true
-  },
-  "extends": [
-    "airbnb/base",
-    "prettier"
-  ],
-  "rules": {
-    "func-names": ["error", "never", { "generators": "never" }]
-  },
-  "plugins": [
-    "prettier"
-  ]
+    "env": {
+        "browser": true
+    },
+    "extends": [
+        "airbnb/base",
+        "prettier",
+        "plugin:vue/vue3-recommended"
+    ],
+    "rules": {
+        "func-names": [
+            "error",
+            "never",
+            {
+                "generators": "never"
+            }
+        ]
+    },
+    "plugins": [
+        "prettier"
+    ]
 }

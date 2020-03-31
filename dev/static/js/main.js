@@ -9,7 +9,7 @@ $(() => {
 
   svg4everybody();
 
-  Vue.component('temp', Temp);
+  Vue.component('Temp', Temp);
 
   // eslint-disable-next-line
   new Vue({
