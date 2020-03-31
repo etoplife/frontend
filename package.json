@@ -3,17 +3,17 @@
     "version": "1.0.0",
     "description": "webpack starter template",
     "main": "index.js",
+    "husky": {
+        "hooks": {
+            "pre-push": "npm run lint",
+            "pre-commit": "npm run lint"
+        }
+    },
     "scripts": {
         "dev": "cross-env NODE_ENV=development gulp",
         "build": "cross-env NODE_ENV=production gulp build",
         "assets": "cross-env NODE_ENV=production gulp assets",
         "lint": "eslint dev/**/*.js --fix && stylelint dev/**/*.scss --fix"
-    },
-    "husky": {
-        "hooks": {
-            "pre-push": "yarn lint",
-            "pre-commit": "yarn lint"
-        }
     },
     "author": "",
     "license": "ISC",
