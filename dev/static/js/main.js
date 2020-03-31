@@ -1,11 +1,9 @@
-import $ from 'jquery';
 import svg4everybody from 'svg4everybody';
 import './includes/lazy';
-import './includes/popup';
-import Vue from 'vue/dist/vue';
+import Vue from 'vue';
 import Temp from './vue/Temp.vue';
 
-$(() => {
+document.addEventListener('DOMContentLoaded', () => {
 
   svg4everybody();
 
