@@ -3,17 +3,21 @@
     "version": "1.0.0",
     "description": "webpack starter template",
     "main": "index.js",
-    "husky": {
-        "hooks": {
-            "pre-push": "npm run lint",
-            "pre-commit": "npm run lint"
-        }
-    },
     "scripts": {
         "dev": "cross-env NODE_ENV=development gulp",
         "build": "cross-env NODE_ENV=production gulp build",
         "assets": "cross-env NODE_ENV=production gulp assets",
         "lint": "eslint dev/**/*.js --fix && stylelint dev/**/*.scss --fix"
+    },
+    "husky": {
+        "hooks": {
+            "pre-push": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.(js|vue|css|scss|sass)": [
+            "yarn lint"
+        ]
     },
     "author": "",
     "license": "ISC",
@@ -36,6 +40,7 @@
         "hard-source-webpack-plugin": "^0.13.1",
         "husky": "^4.2.3",
         "imports-loader": "^0.8.0",
+        "lint-staged": "^10.1.0",
         "prettier": "^1.18.2",
         "stylelint": "^13.2.1",
         "stylelint-config-airbnb": "^0.0.0",
