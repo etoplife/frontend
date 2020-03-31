@@ -16,7 +16,7 @@
     },
     "lint-staged": {
         "*.(js|vue|css|scss|sass)": [
-            "yarn lint"
+            "npm run lint"
         ]
     },
     "author": "",
